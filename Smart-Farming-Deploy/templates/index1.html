@@ -3,274 +3,114 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Crop Predictor</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            font-size: 25px;
-            background-image: url('static/background.jpeg');
-            background-size: cover;
-            background-position: center;
-
-        }
-
-        input {
-            margin-top: 5px;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            margin-top: 20px;
-
-        }
-
-        img {
-            height: 350px;
-            width: 350px;
-            margin-bottom: 20px;
-            border: 5px solid black;
-            backdrop-filter: blur(10px);
-        }
-
-        p {
-            margin-top: 5px;
-            font-size: 25px;
-            font-weight: bold;
-            border: 3px solid black;
-            backdrop-filter: blur(15px);
-        }
-
-        form {
-            position: relative;
-            border: 5px solid black;
-            color: white;
-            backdrop-filter: blur(10px);
-        }
-
-        .btn-container {
-            text-align: center;
-        }
-
-        .btn {
-            height: 28px;
-            width: 100px;
-            margin-bottom: 5px;
-            font-size: 20px;
-            background-color: green;
-            color: white;
-            border: 2px solid black;
-        }
-
-        .form-container {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            /* Auto size for label, 1fr for input */
-            gap: 10px;
-            /* Adjust the gap as needed */
-        }
-
-        /* Style for the labels */
-        .form-label {
-            text-align: right;
-            margin-left: 10px;
-        }
-
-        input[type="number"] {
-
-            align-items: center;
-            width: 250px;
-            /* Adjust the width as needed */
-            height: 25px;
-            /* Adjust the height as needed */
-            border: 2px solid black;
-            /* Add border */
-            border-radius: 5px;
-            /* Optional: Add border radius for rounded corners */
-            padding: 5px;
-            /* Optional: Add padding inside the input box */
-            box-sizing: border-box;
-            /* Ensure padding and border are included in the width and height */
-            margin-right: 10px;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Farming | Crop Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
+    <div class="main-wrapper">
 
-    {% if result == 'apple' %}
-    <div class="container">
-        <p>{{ result|replace('[','')|replace(']','') }}</p>
-        <br>
-        <img src="static/apple.jpeg" alt="Apple">
-    </div>
-    {% elif result == 'banana' %}
-    <div class="container">
-        <p>{{ result|replace('[','')|replace(']','') }}</p>
-        <br>
-        <img src="static/banana.jpeg" alt="Banana">
-    </div>
-    {% elif result == 'blackgram' %}
-    <div class="container">
-        <p>{{ result|replace('[','')|replace(']','') }}</p>
-        <br>
-        <img src="static/blackgram.jpeg" alt="Blackgram">
-    </div>
-    {% elif result == 'chickpea' %}
-    <div class="container">
-        <p>{{ result|replace('[','')|replace(']','') }}</p>
-        <br>
-        <img src="static/chickpea.jpeg" alt="Chickpea">
-    </div>
-    {% elif result == 'coconut' %}
-    <div class="container">
-        <p>{{ result|replace('[','')|replace(']','') }}</p>
-        <br>
-        <img src="static/coconut.jpeg" alt="Coconut">
-    </div>
-    {% elif result == 'coffee' %}
-    <div class="container">
-        <p>{{ result|replace('[','')|replace(']','') }}</p>
-        <br>
-        <img src="static/coffee.jpeg" alt="Coffee">
-    </div>
-    {% elif result == 'grapes' %}
-    <div class="container">
-        <p>{{ result|replace('[','')|replace(']','') }}</p>
-        <br>
-        <img src="static/grapes.jpeg" alt="Grapes">
-    </div>
-    {% elif result == 'jute' %}
-    <div class="container">
-        <p>{{ result|replace('[','')|replace(']','') }}</p>
-        <br>
-        <img src="static/jute.jpg" alt="Jute">
-    </div>
-    {% elif result == 'kidneybeans' %}
-    <div class="container">
-        <p>{{ result|replace('[','')|replace(']','') }}</p>
-        <br>
-        <img src="static/kidneybeans.jpeg" alt="Kidney Beans">
-    </div>
-    {% elif result == 'lentil' %}
-    <div class="container">
-        <p>{{ result|replace('[','')|replace(']','') }}</p>
-        <br>
-        <img src="static/lentil.jpeg" alt="Lentil">
-    </div>
-    {% elif result == 'maize' %}
-    <div class="container">
-        <p>{{ result|replace('[','')|replace(']','') }}</p>
-        <br>
-        <img src="static/maize.jpeg" alt="Maize">
-    </div>
-    {% elif result == 'mango' %}
-    <div class="container">
-        <p>{{ result|replace('[','')|replace(']','') }}</p>
-        <br>
-        <img src="static/mango.jpeg" alt="Mango">
-    </div>
-    {% elif result == 'mothbean' %}
-    <div class="container">
-        <p>{{ result|replace('[','')|replace(']','') }}</p>
-        <br>
-        <img src="static/mothbean.jpeg" alt="Mothbean">
-    </div>
-    {% elif result == 'mungbean' %}
-    <div class="container">
-        <p>{{ result|replace('[','')|replace(']','') }}</p>
-        <br>
-        <img src="static/mungbean.jpeg" alt="Mungbean">
-    </div>
-    {% elif result == 'muskmelon' %}
-    <div class="container">
-        <p>{{ result|replace('[','')|replace(']','') }}</p>
-        <br>
-        <img src="static/muskmelon.jpeg" alt="Muskmelon">
-    </div>
-    {% elif result == 'orange' %}
-    <div class="container">
-        <p>{{ result|replace('[','')|replace(']','') }}</p>
-        <br>
-        <img src="static/orange.jpeg" alt="Orange">
-    </div>
-    {% elif result == 'papaya' %}
-    <div class="container">
-        <p>{{ result|replace('[','')|replace(']','') }}</p>
-        <br>
-        <img src="static/papaya.jpeg" alt="Papaya">
-    </div>
-    {% elif result == 'pigeonpeas' %}
-    <div class="container">
-        <p>{{ result|replace('[','')|replace(']','') }}</p>
-        <br>
-        <img src="static/pigeonpeas.jpg" alt="Pigeonpeas">
-    </div>
-    {% elif result == 'pomegranate' %}
-    <div class="container">
-        <p>{{ result|replace('[','')|replace(']','') }}</p>
-        <br>
-        <img src="static/pomegranate.jpeg" alt="Pomegranate">
-    </div>
-    {% elif result == 'rice' %}
-    <div class="container">
-        <p>{{ result|replace('[','')|replace(']','') }}</p>
-        <br>
-        <img src="static/rice.jpg" alt="Rice">
-    </div>
-    {% elif result == 'watermelon' %}
-    <div class="container">
-        <p>{{ result|replace('[','')|replace(']','') }}</p>
-        <br>
-        <img src="static/watermelon.jpeg" alt="Watermelon">
-    </div>
-    {% endif %}
-    <div class="container">
-        <form method="post" action="/predict">
-            <div class="form-container">
-                <label class="form-label" for="nitrogen">Nitrogen :</label>
-                <input type="number" name="nitrogen" placeholder="Amount Of Nitrogen">
+        <!-- Result Section (Only shown if result exists) -->
+        {% if result %}
+        <div class="card result-card">
+            <h2 class="result-title">Recommended Crop</h2>
+            <div class="result-crop-name">{{ result|replace('[','')|replace(']','')|replace("'", '') }}</div>
+
+            {% set image_map = {
+            'apple': 'apple.jpeg',
+            'banana': 'banana.jpeg',
+            'blackgram': 'blackgram.jpeg',
+            'chickpea': 'chickpea.jpeg',
+            'coconut': 'coconut.jpeg',
+            'coffee': 'coffee.jpeg',
+            'cotton': 'cotton.jpg',
+            'grapes': 'grapes.jpeg',
+            'jute': 'jute.jpg',
+            'kidneybeans': 'kidneybeans.jpeg',
+            'lentil': 'lentil.jpeg',
+            'maize': 'maize.jpeg',
+            'mango': 'mango.jpeg',
+            'mothbean': 'mothbean.jpeg',
+            'mungbean': 'mungbean.jpeg',
+            'muskmelon': 'muskmelon.jpeg',
+            'orange': 'orange.jpeg',
+            'papaya': 'papaya.jpeg',
+            'pigeonpeas': 'pigeonpeas.jpg',
+            'pomegranate': 'pomegranate.jpeg',
+            'rice': 'rice.jpg',
+            'watermelon': 'watermelon.jpeg'
+            } %}
+
+            {% set clean_result = result|replace('[','')|replace(']','')|replace("'", '')|trim %}
+
+            {% if clean_result in image_map %}
+            <img src="{{ url_for('static', filename=image_map[clean_result]) }}" alt="{{ clean_result }}"
+                class="crop-image">
+            {% else %}
+            <!-- Fallback if specific image matching fails, though the previous if/elif block covered it all. 
+                      Improves maintainability over the giant if/elif chain. -->
+            <p>Image not found for {{ clean_result }}</p>
+            {% endif %}
+
+        </div>
+        {% else %}
+        <!-- Header Section (Only clear when no result or maybe always? Let's keep it clean) -->
+        <!-- Actually the user might want to predict again, so form should always be visible. 
+              But let's put the header above the form always. 
+              Wait, the original code hid nothing. 
+              I'll just put the title in the form card or above it. -->
+        {% endif %}
+
+        <!-- Form Section -->
+        <div class="card">
+            <div class="header">
+                <h1>Crop Predictor</h1>
+                <p>Enter soil and environmental details to get the best crop recommendation.</p>
             </div>
 
-            <div class="form-container">
-                <label class="form-label" for="phosphorous">Phosphorous :</label>
-                <input type="number" name="phosphorous" placeholder="Amount Of Phosphorous">
-            </div>
+            <form method="post" action="/predict">
+                <div class="form-group">
+                    <label for="nitrogen">Nitrogen (N)</label>
+                    <input type="number" id="nitrogen" name="nitrogen" placeholder="e.g. 90" required step="any">
+                </div>
 
-            <div class="form-container">
-                <label class="form-label" for="potassium">Potassium :</label>
-                <input type="number" name="potassium" placeholder="Amount Of Potassium">
-            </div>
+                <div class="form-group">
+                    <label for="phosphorous">Phosphorous (P)</label>
+                    <input type="number" id="phosphorous" name="phosphorous" placeholder="e.g. 42" required step="any">
+                </div>
 
-            <div class="form-container">
-                <label class="form-label" for="temperature">Temperature :</label>
-                <input type="number" name="temperature" placeholder="Temperature">
-            </div>
+                <div class="form-group">
+                    <label for="potassium">Potassium (K)</label>
+                    <input type="number" id="potassium" name="potassium" placeholder="e.g. 43" required step="any">
+                </div>
 
-            <div class="form-container">
-                <label class="form-label" for="humidity">Humidity :</label>
-                <input type="number" name="humidity" placeholder="Humidity">
-            </div>
+                <div class="form-group">
+                    <label for="temperature">Temperature (°C)</label>
+                    <input type="number" id="temperature" name="temperature" placeholder="e.g. 20.8" required
+                        step="any">
+                </div>
 
-            <div class="form-container">
-                <label class="form-label" for="ph">PH :</label>
-                <input type="number" name="ph" placeholder="Amount Of PH">
-            </div>
+                <div class="form-group">
+                    <label for="humidity">Humidity (%)</label>
+                    <input type="number" id="humidity" name="humidity" placeholder="e.g. 82.0" required step="any">
+                </div>
 
-            <div class="form-container">
-                <label class="form-label" for="rainfall">Rainfall :</label>
-                <input type="number" name="rainfall" placeholder="Amount Of Rainfall">
-            </div>
+                <div class="form-group">
+                    <label for="ph">pH Level</label>
+                    <input type="number" id="ph" name="ph" placeholder="e.g. 6.5" required step="any">
+                </div>
 
-            <div>
-                <input type="submit" value="Predict" class="btn" id="Sub">
-            </div>
-        </form>
+                <div class="form-group">
+                    <label for="rainfall">Rainfall (mm)</label>
+                    <input type="number" id="rainfall" name="rainfall" placeholder="e.g. 202.9" required step="any">
+                </div>
+
+                <div class="submit-btn-container">
+                    <button type="submit" class="btn">Predict Crop</button>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 
