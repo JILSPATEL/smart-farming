@@ -9,9 +9,10 @@ This is a basic machine learning model designed to predict the most suitable cro
   - Season (winter, summer, monsoon)
   - pH level of the soil
 ## Images
+<img width="1369" height="793" alt="Screenshot 2025-12-09 190639" src="https://github.com/user-attachments/assets/d2f0fabb-0e82-44d3-bcaf-36d1b285fd95" />
 
-![Screenshot 2024-02-23 190203](https://github.com/JILSPATEL/smart-farming/assets/100358865/1034a700-7393-44b5-9c9e-7a6777258f18)
-![Screenshot 2024-02-23 190227](https://github.com/JILSPATEL/smart-farming/assets/100358865/34c385f1-0275-4d33-a64d-605a05bc56a6)
+<img width="1200" height="587" alt="Screenshot 2025-12-09 190648" src="https://github.com/user-attachments/assets/79b84449-fdf3-43d0-adf6-da7e54bcfbe0" />
+
 
 ## Usage
 
